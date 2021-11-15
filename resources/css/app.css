@@ -1,3 +1,76 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer base {
+  h1 {
+    @apply
+    	text-3xl md:text-4xl lg:text-5xl xl:text-6xl
+    	text-gray-800 font-extrabold
+      mb-6 md:mb-8
+    	leading-tight;
+  }
+  h2 {
+    @apply
+    	text-2xl md:text-3xl lg:text-4xl xl:text-5xl
+    	text-gray-800 font-black
+      mb-5 md:mb-7
+      leading-10;
+  }
+  h3 {
+  	@apply
+  		text-xl md:text-2xl lg:text-3xl xl:text-4xl
+  		text-gray-800 font-semibold
+      mb-4 md:mb-6
+      tracking-tighter;
+  }
+  h4 {
+  	@apply
+  		text-lg md:text-xl lg:text-2xl xl:text-3xl
+  		text-gray-800 font-bold
+      mb-3 md:mb-5
+      leading-7;
+  }
+  section p {
+  		@apply
+        text-lg
+  			text-gray-600 leading-relaxed
+  			pb-3;
+  }
+  section a {
+      @apply
+        border-b-2 border-indigo-700
+        hover:bg-indigo-700 hover:text-white;
+  }
+  section strong {
+      @apply
+        font-bold;
+  }
+  section i {
+      @apply
+        italic;
+  }
+  section ul {
+    @apply
+      text-base
+      list-disc pl-4 md:pl-8 mb-2;
+  }
+  section ol {
+    @apply
+      text-base
+      list-decimal pl-4 md:pl-8 mb-2;
+  }
+  section li {
+    @apply
+      mb-1;
+  }
+  .subhead {
+    @apply
+      font-normal text-lg uppercase leading-3 text-indigo-700 text-center pb-4;
+  }
+}
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.3em; vertical-align: super;}
+sub { bottom: -0.25em; vertical-align: sub;}
+

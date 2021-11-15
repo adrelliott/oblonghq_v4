@@ -21,12 +21,12 @@
         @keydown.escape="closeSideMenu"
 >
     <div class="py-4 text-gray-500 dark:text-gray-400">
-        <a class="ml-6 text-lg font-bold text-gray-800" href="{{ route('dashboard') }}">
+        <a class="ml-6 text-lg font-bold text-gray-800" href="{{ route('admin.dashboard') }}">
             OblongHq
         </a>
         <ul class="mt-6">
             <li class="relative px-6 py-3">
-                <x-nav-link :active="request()->routeIs('dashboard')">
+                <x-nav-link :active="request()->routeIs('admin.dashboard')">
                     <x-slot name="icon">
                         <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                              stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -49,7 +49,7 @@
             </li>
 
             <li class="relative px-6 py-3">
-                <x-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
+                <x-nav-link href="{{ route('admin.about') }}" :active="request()->routeIs('admin.about')">
                     <x-slot name="icon">
                         <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                             <path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>

@@ -4,30 +4,62 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Public Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
+*/
+Route::get('/', function () {
+    return view('public.index');
+})->name('public.home');
+Route::get('/about', function () {
+    return view('public.about');
+})->name('public.about');
+Route::get('/faq', function () {
+    return view('public.faq');
+})->name('public.faq');
+Route::get('/book', function () {
+    return view('public.book');
+})->name('public.book');
+Route::get('/about/privacy', function () {
+    return view('public.privacy');
+})->name('public.privacy');
+Route::get('/about/cookies', function () {
+    return view('public.cookies');
+})->name('public.cookies');
+Route::get('/about/contact', function () {
+    return view('public.contact');
+})->name('public.contact');
+
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+*/
+Route::middleware('auth')->group(function () {
+
+    Route::get('admin/dashboard', App\Http\Controllers\Admin\DashboardController::class)->name('admin.dashboard');
+
+    Route::view('admin/about', 'admin.about')->name('admin.about')->middleware('auth');
+
+    Route::get('admin/users', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.index');
+
+    Route::get('admin/profile', [\App\Http\Controllers\Admin\ProfileController::class, 'show'])->name('profile.show');
+    Route::put('admin/profile', [\App\Http\Controllers\Admin\ProfileController::class, 'update'])->name('profile.update');
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| Survey Routes
+|--------------------------------------------------------------------------
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
+
+
+/*
+|--------------------------------------------------------------------------
+| Auth Routes
+|--------------------------------------------------------------------------
+*/
 require __DIR__.'/auth.php';
-
-Route::middleware('auth')->group(function () {
-    Route::view('about', 'about')->name('about')->middleware('auth');
-
-    Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
-
-    Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
-    Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
-});

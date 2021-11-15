@@ -1,12 +1,12 @@
 <aside class="z-20 hidden w-64 overflow-y-auto bg-white md:block flex-shrink-0">
     <div class="py-4 text-gray-500">
-        <a class="ml-6 text-lg font-bold text-gray-800" href="{{ route('dashboard') }}">
+        <a class="ml-6 text-lg font-bold text-gray-800" href="{{ route('admin.dashboard') }}">
             OblongHq
         </a>
 
         <ul class="mt-6">
             <li class="relative px-6 py-3">
-                <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                <x-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
                     <x-slot name="icon">
                         <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                              stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -31,7 +31,7 @@
             </li>
 
             <li class="relative px-6 py-3">
-                <x-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
+                <x-nav-link href="{{ route('admin.about') }}" :active="request()->routeIs('admin.about')">
                     <x-slot name="icon">
                         <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                              stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
