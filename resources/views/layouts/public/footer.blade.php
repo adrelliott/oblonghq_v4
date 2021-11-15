@@ -1,7 +1,7 @@
 <div class="mt-16 py-8 w-full bg-gray-800 text-white">
     <div class="mx-4 text-center md:text-left sm:flex sm:justify-between items-center">
         <div class="mb-2 sm:mb-0">
-            <img src="/images/logos/logo_400px_white.png" alt="Hybrid Teams HQ" class="mx-auto sm:mx-0 w-2/4 sm:w-full">
+            <img src="{{ asset('images/logos/logos-small/white.png') }}" alt="Oblong HQ" class="mx-auto sm:mx-0 w-2/4 sm:w-full">
         </div>
         <div>
             <ul class="sm:flex justify-between gap-6">

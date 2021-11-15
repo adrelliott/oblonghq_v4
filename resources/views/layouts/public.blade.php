@@ -27,9 +27,6 @@
     <!-- Desktop Nav -->
     @include('layouts.public.navigation')
 
-    <!-- Mobile Nav -->
-    @include('layouts.public.navigation-mobile')
-
      <div class="min-h-screen">
         {{ $slot }}
     </div>

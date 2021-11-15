@@ -7,7 +7,7 @@
     <!--Logo-->
     <div class="flex items-center flex-shrink-0  mr-6">
         <a href="/" class="" >
-            <img src="/images/logos/logo_400px_black.png" width="300px" alt="Hybrid Teams HQ">
+            <img src="{{ asset('images/logos/logos-small/black.png') }}" width="300px" alt="Oblong HQ">
         </a>
     </div>
     <!--Toggle button (hidden on large screens)-->
