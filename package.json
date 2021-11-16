@@ -11,7 +11,8 @@
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.2.1",
-        "alpinejs": "^3.4.2",
+        "@tailwindcss/typography": "^0.4.1",
+        "alpinejs": "^3.5.1",
         "autoprefixer": "^10.1.0",
         "axios": "^0.21",
         "color": "^4.0.1",
@@ -19,6 +20,9 @@
         "lodash": "^4.17.19",
         "postcss": "^8.2.1",
         "postcss-import": "^12.0.1",
-        "tailwindcss": "^2.0.2"
+        "tailwindcss": "^2.2.19"
+    },
+    "dependencies": {
+        "@alpinejs/trap": "^3.5.1"
     }
 }

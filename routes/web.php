@@ -40,7 +40,9 @@ Route::middleware('auth')->group(function () {
 
     Route::view('admin/about', 'admin.about')->name('admin.about')->middleware('auth');
 
-    Route::get('admin/users', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.index');
+    // Route::get('admin/users', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.index');
+    Route::get('admin/users', \App\Http\Livewire\Admin\Users\ListUsers::class)->name('users.index');
+    Route::get('admin/users/edit', \App\Http\Livewire\Admin\Users\EditUser::class)->name('users.edit');
 
     Route::get('admin/profile', [\App\Http\Controllers\Admin\ProfileController::class, 'show'])->name('profile.show');
     Route::put('admin/profile', [\App\Http\Controllers\Admin\ProfileController::class, 'update'])->name('profile.update');

@@ -8,6 +8,8 @@ module.exports = {
         "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
+        './vendor/filament/forms/resources/views/**/*.blade.php',
+        './vendor/filament/tables/resources/views/**/*.blade.php',
     ],
 
     theme: {
@@ -25,6 +27,10 @@ module.exports = {
             transparent: 'transparent',
             white: '#ffffff',
             black: '#000000',
+            danger: '#f8b4b4',
+            primary: '#5145cd',
+            success: '#0e9f6e',
+            warning: '#d03801',
             gray: {
                 '50': '#f9fafb',
                 '100': '#f4f5f7',
@@ -186,6 +192,7 @@ module.exports = {
         boxShadow: ["focus"],
     },
     plugins: [
-        require("@tailwindcss/forms")
+        require("@tailwindcss/forms"),
+        require('@tailwindcss/typography'),
     ],
 };
