@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -34,15 +35,33 @@ Route::get('/about/contact', function () {
 | Admin Routes
 |--------------------------------------------------------------------------
 */
-Route::middleware('auth')->group(function () {
+Route::redirect('/admin', '/admin/dashboard');
 
-    Route::get('admin/dashboard', App\Http\Controllers\Admin\DashboardController::class)->name('admin.dashboard');
+Route::middleware('auth')->prefix('admin')->group(function () {
 
-    Route::view('admin/about', 'admin.about')->name('admin.about')->middleware('auth');
+    Route::get('/dashboard', App\Http\Controllers\Admin\DashboardController::class)->name('admin.dashboard');
+    Route::view('/about', 'admin.about')->name('admin.about')->middleware('auth');
+
+    // User management
+    Route::prefix('users')->name('users.')->group(function () {
+        Route::get('/', \App\Http\Livewire\Admin\Users\ListUsers::class)->name('index');
+        Route::get('/{user}', \App\Http\Livewire\Admin\Users\EditUser::class)->name('edit');
+    });
+
+    // Client Management
+    Route::prefix('clients')->name('clients.')->group(function () {
+        Route::get('/', \App\Http\Livewire\Admin\Users\ListUsers::class)->name('index');
+        Route::get('/{client}', \App\Http\Livewire\Admin\Users\EditUser::class)->name('edit');
+    });
+
+    // Survey Management
+
+
+
 
     // Route::get('admin/users', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.index');
-    Route::get('admin/users', \App\Http\Livewire\Admin\Users\ListUsers::class)->name('users.index');
-    Route::get('admin/users/edit', \App\Http\Livewire\Admin\Users\EditUser::class)->name('users.edit');
+    // Route::get('admin/users', \App\Http\Livewire\Admin\Users\ListUsers::class)->name('users.index');
+    // Route::get('admin/users/edit', \App\Http\Livewire\Admin\Users\EditUser::class)->name('users.edit');
 
     Route::get('admin/profile', [\App\Http\Controllers\Admin\ProfileController::class, 'show'])->name('profile.show');
     Route::put('admin/profile', [\App\Http\Controllers\Admin\ProfileController::class, 'update'])->name('profile.update');

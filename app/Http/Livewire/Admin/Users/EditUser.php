@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Admin\Users;
 
 use Livewire\Component;
 use Filament\Forms;
-use App\Models\User;
+use App\Models\Admin\User;
 
 class EditUser extends Component implements Forms\Contracts\HasForms
 {

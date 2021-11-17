@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Admin\Users;
 
 use Livewire\Component;
 
-use App\Models\User;
+use App\Models\Admin\User;
 use Filament\Tables;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
