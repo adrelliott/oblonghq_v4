@@ -11,7 +11,7 @@ class Survey extends Model
     use HasFactory, SoftDeletes;
 
     protected $with = ['sections'];
-    protected $guarded = ['id', 'tenant_id', 'client_id'];
+    protected $guarded = ['id', 'tenant_id', 'company_id'];
 
     public function sections()
     {
@@ -19,8 +19,8 @@ class Survey extends Model
             ->orderBy('order', 'asc');
     }
 
-    public function client()
+    public function company()
     {
-        return $this->belongsTo(Client::class);
+        return $this->belongsTo(Company::class);
     }
 }

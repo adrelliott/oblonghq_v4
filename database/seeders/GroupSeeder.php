@@ -13,11 +13,11 @@ class GroupSeeder extends Seeder
      */
     public function run()
     {
-        $clients = \App\Models\Clients\Client::all();
+        $companies = \App\Models\Crm\Company::all();
 
-        $clients->each(function($client) {
-            $groups = \App\Models\Clients\Group::factory(3)->create([
-                'client_id' => $client->id,
+        $companies->each(function($company) {
+            $groups = \App\Models\Crm\Group::factory(3)->create([
+                'company_id' => $company->id,
             ]);
         });
     }

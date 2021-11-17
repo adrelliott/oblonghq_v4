@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories\Clients;
+namespace Database\Factories\Crm;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -12,7 +12,7 @@ class ContactFactory extends Factory
      *
      * @var string
      */
-    protected $model = \App\Models\Clients\Contact::class;
+    protected $model = \App\Models\Crm\Contact::class;
     /**
      * Define the model's default state.
      *

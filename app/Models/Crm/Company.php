@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Models\Clients;
+namespace App\Models\Crm;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\IsTenantTrait as BelongsToATenant;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Client extends Model
+class Company extends Model
 {
     use HasFactory, BelongsToATenant, SoftDeletes;
 
-    protected $guarded = ['id', 'client_id', 'tenant_id'];
+    protected $guarded = ['id', 'company_id', 'tenant_id'];
 
     // Groups. Users can add or remove (soft delete) groups.
     // To add contacts to a group, use Group.php model
@@ -33,7 +33,7 @@ class Client extends Model
     }
 
 
-    // Contacts. Clients can add contacts as either contacts (no status), employees or client contacts (e.g. manager or owner )
+    // Contacts. Users can add contacts as either contacts (no status), employees or client contacts (e.g. manager or owner )
     // See Contact::TYPES constant for mapping
     public function contacts()
     {

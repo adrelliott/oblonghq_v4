@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class ClientSeeder extends Seeder
+class CompanySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +16,7 @@ class ClientSeeder extends Seeder
         $users = \App\Models\Admin\User::all();
 
         $users->each(function($user) {
-            \App\Models\Clients\Client::factory(3)->create([
+            \App\Models\Crm\Company::factory(3)->create([
                 'tenant_id' => $user->tenant_id
             ]);
         });

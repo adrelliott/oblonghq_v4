@@ -13,9 +13,9 @@ class SurveySeeder extends Seeder
      */
     public function run()
     {
-        $clients = \App\Models\Clients\Client::all();
+        $companies = \App\Models\Crm\Company::all();
 
-        $clients->each(function($client) {
+        $companies->each(function($company) {
             \App\Models\Surveys\Survey::factory(3)
                 ->has(
                     \App\Models\Surveys\Section::factory()
@@ -27,8 +27,8 @@ class SurveySeeder extends Seeder
                         // )
                     )
                     ->create([
-                        'client_id' => $client->id,
-                        'tenant_id' => $client->tenant_id
+                        'company_id' => $company->id,
+                        'tenant_id' => $company->tenant_id
                     ]);
         });
     }

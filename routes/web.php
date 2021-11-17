@@ -49,7 +49,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     });
 
     // Client Management
-    Route::prefix('clients')->name('clients.')->group(function () {
+    Route::prefix('companies')->name('companies.')->group(function () {
         Route::get('/', \App\Http\Livewire\Admin\Users\ListUsers::class)->name('index');
         Route::get('/{client}', \App\Http\Livewire\Admin\Users\EditUser::class)->name('edit');
     });

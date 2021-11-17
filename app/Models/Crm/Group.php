@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Clients;
+namespace App\Models\Crm;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +10,7 @@ class Group extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $guarded = ['id', 'client_id'];
+    protected $guarded = ['id', 'company_id'];
 
     public function members()
     {

@@ -21,7 +21,7 @@ class CreateContactsTable extends Migration
             $table->string('email')->nullable();
             $table->text('notes')->nullable();
             $table->integer('type_id')->default(1);
-            $table->foreignId('client_id')->constrained();
+            $table->foreignId('company_id')->constrained();
             $table->timestamps();
             $table->softDeletes();
         });

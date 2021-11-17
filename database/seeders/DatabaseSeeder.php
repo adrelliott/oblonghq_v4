@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
 
             // Mock up a crm
-            ClientSeeder::class,
+            CompanySeeder::class,
             ContactSeeder::class,
             GroupSeeder::class,
 

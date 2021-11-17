@@ -13,12 +13,12 @@ class ContactSeeder extends Seeder
      */
     public function run()
     {
-        $clients = \App\Models\Clients\Client::all();
+        $companies = \App\Models\Crm\Company::all();
 
-        $clients->each(function($client) {
-            \App\Models\Clients\Contact::factory(150)
+        $companies->each(function($company) {
+            \App\Models\Crm\Contact::factory(150)
                 ->create([
-                    'client_id' => $client->id
+                    'company_id' => $company->id
                 ]);
         });
     }

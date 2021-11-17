@@ -1,17 +1,18 @@
 <?php
 
-namespace Database\Factories\Clients;
+namespace Database\Factories\Crm;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ClientFactory extends Factory
+class GroupFactory extends Factory
 {
-    /**
+
+     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = \App\Models\Clients\Client::class;
+    protected $model = \App\Models\Crm\Group::class;
 
     /**
      * Define the model's default state.
@@ -21,8 +22,7 @@ class ClientFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->company(),
-            'description' => $this->faker->sentence(6),
+            'name' => $this->faker->sentence(4),
         ];
     }
 }
