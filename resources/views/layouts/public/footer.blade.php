@@ -8,7 +8,7 @@
                 <li class=""><a href="/" class="no-underline border-b-2 border-gray-800 hover:border-purple-700 pb-2">Home</a></li>
                 <li class=""><a href="/about/privacy" class="no-underline border-b-2 border-gray-800 hover:border-purple-700 pb-2">Privacy</a></li>
                 <li class=""><a href="/about/cookies" class="no-underline border-b-2 border-gray-800 hover:border-purple-700 pb-2">Cookies</a></li>
-                <li class=""><a href="/contact" class="no-underline border-b-2 border-gray-800 hover:border-purple-700 pb-2">Contact</a></li>
+                <li class=""><a href="/about/contact" class="no-underline border-b-2 border-gray-800 hover:border-purple-700 pb-2">Contact</a></li>
             </ul>
         </div>
     </div>
