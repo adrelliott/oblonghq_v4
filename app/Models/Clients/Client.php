@@ -86,5 +86,21 @@ class Client extends Model
         return $this->removeContacts($contactIds);
     }
 
+    // Surveys: A client can have many surveys
+    public function surveys()
+    {
+        return $this->hasMany(Contact::class);
+    }
+
+    // public function addClientContact(Array $contactIds)
+    // {
+    //     return $this->addContacts($contactIds, 4);
+    // }
+
+    // public function removeClientContact(Array $contactIds)
+    // {
+    //     return $this->removeContacts($contactIds);
+    // }
+
 
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClientContactTable extends Migration
+class CreateQuestionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CreateClientContactTable extends Migration
      */
     public function up()
     {
-        Schema::create('client_contact', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('client_id');
-            $table->foreignId('contact_id');
+            $table->string('question');
+            $table->integer('question_type')->default(1);
+            $table->text('description')->nullable();
+            $table->string('help_text')->nullable();
+            $table->integer('order')->default(0);
+            $table->timestamp('published_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +33,6 @@ class CreateClientContactTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('client_contact');
+        Schema::dropIfExists('questions');
     }
 }

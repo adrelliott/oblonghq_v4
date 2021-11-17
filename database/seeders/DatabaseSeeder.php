@@ -23,10 +23,12 @@ class DatabaseSeeder extends Seeder
             ContactSeeder::class,
             GroupSeeder::class,
 
-            // Now set up the surveys, sections and questions
-            // SurveySeeder::class,
-            // SectionSeeder::class,
-            // QuestionSeeder::class,
+            // Now set up the surveys, sections and questions in SurveySeeder
+            SurveySeeder::class,
+            QuestionSeeder::class,
+
+            // Now mock some responses to surveys
+            // ResponseSeeder::class,
 
             // Mocks up a membership site
             // CourseSeeder::class,
