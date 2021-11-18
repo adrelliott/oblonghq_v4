@@ -21,6 +21,7 @@ class CreateAnswersTable extends Migration
             $table->integer('order')->default(0);
             $table->boolean('is_correct_answer')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

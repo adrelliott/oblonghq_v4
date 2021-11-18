@@ -16,7 +16,7 @@ class ContactSeeder extends Seeder
         $companies = \App\Models\Crm\Company::all();
 
         $companies->each(function($company) {
-            \App\Models\Crm\Contact::factory(150)
+            \App\Models\Crm\Contact::factory(10)
                 ->create([
                     'company_id' => $company->id
                 ]);

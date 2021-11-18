@@ -102,5 +102,11 @@ class Company extends Model
     //     return $this->removeContacts($contactIds);
     // }
 
+    // Source (i.e. where they came from)
+    public function source()
+    {
+        return $this->hasOne(Source::class);
+    }
+
 
 }
