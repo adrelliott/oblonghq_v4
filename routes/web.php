@@ -35,23 +35,32 @@ Route::get('/about/contact', function () {
 | Admin Routes
 |--------------------------------------------------------------------------
 */
-Route::redirect('/admin', '/admin/dashboard');
+Route::redirect('/dallas', '/dallas/dashboard');
 
-Route::middleware('auth')->prefix('admin')->group(function () {
+Route::middleware('auth')->prefix('dallas')->group(function () {
 
     Route::get('/dashboard', App\Http\Controllers\Admin\DashboardController::class)->name('admin.dashboard');
     Route::view('/about', 'admin.about')->name('admin.about')->middleware('auth');
 
-    // User management
+    // Admin
     Route::prefix('users')->name('users.')->group(function () {
         Route::get('/', \App\Http\Livewire\Admin\Users\ListUsers::class)->name('index');
         Route::get('/{user}', \App\Http\Livewire\Admin\Users\EditUser::class)->name('edit');
     });
 
-    // Client Management
+    // CRM
     Route::prefix('companies')->name('companies.')->group(function () {
-        Route::get('/', \App\Http\Livewire\Admin\Users\ListUsers::class)->name('index');
-        Route::get('/{client}', \App\Http\Livewire\Admin\Users\EditUser::class)->name('edit');
+        Route::get('/', \App\Http\Livewire\Crm\Company\Table::class)->name('index');
+        Route::get('/create', \App\Http\Livewire\Crm\Company\Form::class)->name('create');
+        // Route::get('/{company}', \App\Http\Livewire\Crm\Companies\ViewCompany::class)->name('view');
+        Route::get('/{company}/edit', \App\Http\Livewire\Crm\Company\Form::class)->name('edit');
+    });
+    Route::prefix('contacts')->name('contacts.')->group(function () {
+        Route::get('/{company}/list', [\App\Http\Controllers\Crm\ContactController::class, 'index'])->name('index')->scopeBindings();
+        // Route::get('/{company}/list', \App\Http\Livewire\Crm\Contact\Table::class)->name('index');
+        // Route::get('/create', \App\Http\Livewire\Crm\Contact\Form::class)->name('create');
+        // Route::get('/{contact}', \App\Http\Livewire\Crm\Companies\ViewContact::class)->name('view');
+        // Route::get('/{contact}/edit', \App\Http\Livewire\Crm\Contact\Form::class)->name('edit');
     });
 
     // Survey Management

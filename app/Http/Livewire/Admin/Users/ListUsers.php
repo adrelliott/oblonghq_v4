@@ -2,16 +2,16 @@
 
 namespace App\Http\Livewire\Admin\Users;
 
-use Livewire\Component;
-
-use App\Models\Admin\User;
-use Filament\Tables;
-use Illuminate\Contracts\View\View;
+use App\Http\Livewire\TableComponent;
+use Filament\Tables as Filament;
 use Illuminate\Database\Eloquent\Builder;
 
-class ListUsers extends Component implements Tables\Contracts\HasTable
+use App\Models\Admin\User;
+
+// use Illuminate\Contracts\View\View;
+
+class ListUsers extends TableComponent
 {
-    use Tables\Concerns\InteractsWithTable;
 
     protected function getTableQuery(): Builder
     {
@@ -26,8 +26,8 @@ class ListUsers extends Component implements Tables\Contracts\HasTable
     protected function getTableColumns(): array
     {
         return [
-            Tables\Columns\TextColumn::make('name'),
-            Tables\Columns\TextColumn::make('email'),
+            Filament\Columns\TextColumn::make('name'),
+            Filament\Columns\TextColumn::make('email'),
         ];
     }
 }
