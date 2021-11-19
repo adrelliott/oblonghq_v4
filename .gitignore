@@ -15,3 +15,4 @@ yarn-error.log
 /.vscode
 zzz_todo.md
 *.DS_Store
+resources/views/*.DS_Store

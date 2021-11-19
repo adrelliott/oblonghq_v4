@@ -49,12 +49,36 @@ Route::middleware('auth')->prefix('dallas')->group(function () {
     });
 
     // CRM
-    Route::prefix('companies')->name('companies.')->group(function () {
-        Route::get('/', \App\Http\Livewire\Crm\Company\Table::class)->name('index');
-        Route::get('/create', \App\Http\Livewire\Crm\Company\Form::class)->name('create');
-        // Route::get('/{company}', \App\Http\Livewire\Crm\Companies\ViewCompany::class)->name('view');
-        Route::get('/{company}/edit', \App\Http\Livewire\Crm\Company\Form::class)->name('edit');
-    });
+    Route::resource('companies', \App\Http\Controllers\Crm\CompanyController::class)
+        ->except(['store', 'update', 'destroy']);
+    Route::resource('companies.contacts', \App\Http\Controllers\Crm\ContactController::class)
+        ->except(['store', 'update', 'destroy'])
+        ->scoped();
+
+
+
+
+
+
+
+    // Route::resource('companies', \App\Http\Controllers\Crm\CompanyController::class)
+    //     ->except(['store', 'update', 'destroy'])
+    //     ->prefix('companies')
+    //     ->name('companies.');
+
+    // Route::prefix('companies')->name('companies.')->group(function () {
+    //     Route::resource('companies', \App\Http\Controllers\Crm\CompanyController::class)
+    //         ->except(['store', 'update', 'destroy']);
+    //     });
+
+    //     // Route::get('/', \App\Http\Livewire\Crm\Company\Table::class)->name('index');
+    //     Route::get('/', [\App\Http\Controllers\Crm\CompanyController::class, 'index'])->name('index');
+    //     Route::get('/create', [\App\Http\Controllers\Crm\CompanyController::class, 'create'])->name('create');
+    //     Route::get('/{company}', [\App\Http\Controllers\Crm\CompanyController::class, 'show'])->name('show');
+    //     // Route::get('/{company}', \App\Http\Livewire\Crm\Companies\ViewCompany::class)->name('view');
+    //     Route::get('/{company}/edit', [\App\Http\Controllers\Crm\CompanyController::class, 'edit'])->name('edit');
+    //     // Route::get('/{company}/edit', \App\Http\Livewire\Crm\Company\Form::class)->name('edit');
+    // });
     Route::prefix('contacts')->name('contacts.')->group(function () {
         Route::get('/{company}/list', [\App\Http\Controllers\Crm\ContactController::class, 'index'])->name('index')->scopeBindings();
         // Route::get('/{company}/list', \App\Http\Livewire\Crm\Contact\Table::class)->name('index');

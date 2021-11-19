@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+use App\Models\Crm\Company;
+
 class Contact extends Model
 {
     use HasFactory, SoftDeletes;
@@ -53,6 +55,11 @@ class Contact extends Model
       if ($typeId) {
          $this->attributes['type_id'] = $typeId;
       }
+   }
+
+   public function company()
+   {
+       return $this->belongsTo(Company::class);
    }
 
 

@@ -17,9 +17,7 @@ class ContactController extends Controller
      */
     public function index(Company $company)
     {
-        return Contact::select('id', 'first_name', 'company_id')
-            ->where('company_id', $company->id)
-            ->get();
+        return view('crm.contacts.index', compact('company'));
     }
 
     /**
@@ -30,20 +28,12 @@ class ContactController extends Controller
      */
     public function create(Company $company)
     {
-        //
+        $contact = new $company->contact();
+        // $contact = new Contact;
+        dd($contact);
+        return view('crm.contacts.create', compact('contact'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Company  $company
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request, Company $company)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -54,7 +44,7 @@ class ContactController extends Controller
      */
     public function show(Company $company, Contact $contact)
     {
-        //
+        return view('crm.contacts.create', compact('contact'));
     }
 
     /**

@@ -5,15 +5,11 @@ namespace App\Http\Livewire\Crm\Contact;
 use App\Http\Livewire\TableComponent;
 use Filament\Tables as Filament;
 
-use App\Models\Crm\Contact;
+
+// use Illuminate\Database\Eloquent\Builder;
 
 class Table extends TableComponent
 {
-    public function mount(Contact $contact)
-    {
-        $this->model = $contact;
-        $this->view = 'livewire.crm.contact.table';
-    }
 
      protected function getTableColumns(): array
     {

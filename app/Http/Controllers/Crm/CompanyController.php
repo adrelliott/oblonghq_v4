@@ -13,31 +13,22 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Company $company)
     {
-        //
+        return view('crm.companies.index', compact('company'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new resource. Pass in model for livewire component
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Company $company)
     {
-        //
+        return view('crm.companies.create', compact('company'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    // Store, update and delete are handled by Http/Livewire components
 
     /**
      * Display the specified resource.
@@ -47,7 +38,7 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        //
+        return view('crm.companies.show', compact('company'));
     }
 
     /**
@@ -58,29 +49,6 @@ class CompanyController extends Controller
      */
     public function edit(Company $company)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Crm\Company  $company
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Company $company)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Crm\Company  $company
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Company $company)
-    {
-        //
+        return view('crm.companies.edit', compact('company'));
     }
 }
