@@ -13,6 +13,7 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+.editorconfig
 zzz_todo.md
 *.DS_Store
-resources/views/*.DS_Store
+/resources/views/*.DS_Store
