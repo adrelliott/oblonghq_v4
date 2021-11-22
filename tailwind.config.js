@@ -10,6 +10,8 @@ module.exports = {
         "./resources/views/**/*.blade.php",
         './vendor/filament/forms/resources/views/**/*.blade.php',
         './vendor/filament/tables/resources/views/**/*.blade.php',
+        './vendor/usernotnull/tall-toasts/config/**/*.php',
+        './vendor/usernotnull/tall-toasts/resources/views/**/*.blade.php',
     ],
 
     theme: {

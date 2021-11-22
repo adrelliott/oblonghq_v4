@@ -14,11 +14,13 @@
 
 
         <!-- Scripts -->
+        @toastScripts
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{ asset('js/init-alpine.js') }}"></script>
         @stack('scripts')
 </head>
 <body>
+    <livewire:toasts />
     <div
         class="flex h-screen bg-gray-50"
         :class="{ 'overflow-hidden': isSideMenuOpen }"

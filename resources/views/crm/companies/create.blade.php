@@ -3,4 +3,4 @@
 		Create a new client
 	</x-slot>
 	<livewire:crm.companies.create-form :model="$company" />
-</x-app-layout>
+</x-app-layout> 

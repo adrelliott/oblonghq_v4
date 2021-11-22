@@ -6,10 +6,11 @@ use Livewire\Component;
 use Filament\Forms;
 use Illuminate\Database\Eloquent\Model;
 use App\Providers\RouteServiceProvider;
+use Usernotnull\Toast\Concerns\WireToast;
 
 class FormCreateComponent extends Component implements Forms\Contracts\HasForms
 {
-    use Forms\Concerns\InteractsWithForms;
+    use Forms\Concerns\InteractsWithForms,  WireToast;
 
     public $model;
     protected $redirect = RouteServiceProvider::HOME;
@@ -30,7 +31,10 @@ class FormCreateComponent extends Component implements Forms\Contracts\HasForms
         $this->beforeCreate();
         $this->model = $this->model->create($this->form->getState());
         $this->emit('saved');
-        return redirect($this->redirect);
+        toast()
+            ->success('Changes saved!')
+            ->push();
+//        return redirect($this->redirect);
     }
 
     protected function beforeCreate(){}
