@@ -56,6 +56,8 @@ return [
 
     'asset_url' => env('ASSET_URL', null),
 
+    'admin_path' => env('ADMIN_PATH', 'admin'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

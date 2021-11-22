@@ -35,9 +35,9 @@ Route::get('/about/contact', function () {
 | Admin Routes
 |--------------------------------------------------------------------------
 */
-Route::redirect('/dallas', '/dallas/dashboard');
+Route::redirect('/admin', '/admin/dashboard');
 
-Route::middleware('auth')->prefix('dallas')->group(function () {
+Route::middleware('auth')->prefix('admin')->group(function () {
 
     Route::get('/dashboard', App\Http\Controllers\Admin\DashboardController::class)->name('admin.dashboard');
     Route::view('/about', 'admin.about')->name('admin.about')->middleware('auth');

@@ -5,21 +5,18 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Filament\Forms;
 use Illuminate\Database\Eloquent\Model;
+use App\Providers\RouteServiceProvider;
 
-class FormComponent extends Component implements Forms\Contracts\HasForms
+class FormCreateComponent extends Component implements Forms\Contracts\HasForms
 {
     use Forms\Concerns\InteractsWithForms;
 
     public $model;
-    public $method = 'create';
-
-
-    // If $method = create then don't load a
+    protected $redirect = RouteServiceProvider::HOME;
 
     public function mount($model): void
     {
         $this->model = $model;
-        $this->form->fill($this->model->toArray());
     }
 
     protected function getFormModel(): Model
@@ -28,14 +25,14 @@ class FormComponent extends Component implements Forms\Contracts\HasForms
         return $this->model;
     }
 
-    public function save(): void
+    public function create()
     {
-        if ( ! $this->model->id) {
-            $this->model = $this->model->create($this->form->getState());
-        } else {
-            $this->model->update($this->form->getState());
-        }
+        $this->beforeCreate();
+        $this->model = $this->model->create($this->form->getState());
         $this->emit('saved');
+        return redirect($this->redirect);
     }
+
+    protected function beforeCreate(){}
 }
 

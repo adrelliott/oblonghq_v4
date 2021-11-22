@@ -28,9 +28,7 @@ class ContactController extends Controller
      */
     public function create(Company $company)
     {
-        $contact = new $company->contact();
-        // $contact = new Contact;
-        dd($contact);
+        $contact = $company->contacts();
         return view('crm.contacts.create', compact('contact'));
     }
 
