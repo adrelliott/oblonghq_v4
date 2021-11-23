@@ -3,5 +3,5 @@
 		show a client
 	</x-slot>
 	<code>Perhaps lay the page out like update and when yu clikc 'update' button, the input borders appead and you can edit the values? </code>
-	<livewire:crm.company.form :model="$company" />
+	<livewire:crm.contacts.form :model="$company" />
 </x-app-layout>

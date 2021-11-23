@@ -2,5 +2,5 @@
 	<x-slot name="header">
 		Create a new client
 	</x-slot>
-	<livewire:crm.contact.form :model="$contact" />
+	<livewire:crm.contacts.form :model="$contact" />
 </x-app-layout>

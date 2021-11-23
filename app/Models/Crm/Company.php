@@ -6,12 +6,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\IsTenantTrait as BelongsToATenant;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Carbon\Carbon;
 
 class Company extends Model
 {
     use HasFactory, BelongsToATenant, SoftDeletes;
 
     protected $guarded = ['id', 'company_id', 'tenant_id'];
+
+    public const STAGES = [
+      1 => 'Prospect',
+      2 => 'Lead',
+      3 => 'Client',
+      4 => 'Closed',
+   ];
 
     // Groups. Users can add or remove (soft delete) groups.
     // To add contacts to a group, use Group.php model
@@ -30,6 +38,21 @@ class Company extends Model
     public function removeGroup($groupId)
     {
         return $this->groups()->find($groupId)->delete();
+    }
+
+    public function getCreatedAtAttribute()
+    {
+        return Carbon::parse($this->attributes['created_at'])->diffForHumans();
+    }
+
+    public static function getStageId($stage)
+    {
+      return array_search($stage, self::STAGES);
+    }
+
+    public static function getStageName($stage_id)
+    {
+      return array_search($stage_id, self::STAGES);
     }
 
 

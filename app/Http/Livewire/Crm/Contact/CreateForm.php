@@ -2,10 +2,10 @@
 
 namespace App\Http\Livewire\Crm\Contact;
 
-use App\Http\Livewire\FormComponent;
+use App\Http\Livewire\FormCreateComponent;
 use Filament\Forms\Components as Filament;
 
-class Form extends FormComponent
+class CreateForm extends FormCreateComponent
 {
     // The form properties (matched to model attributes)
     public $first_name;

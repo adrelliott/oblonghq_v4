@@ -17,6 +17,7 @@ class CreateCompaniesTable extends Migration
             $table->id()->from(2505);
             $table->string('name');
             $table->string('description')->nullable();
+            $table->integer('stage_id')->default(1);
             $table->foreignId('tenant_id')->constrained();
             $table->timestamps();
             $table->softDeletes();

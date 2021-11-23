@@ -14,7 +14,7 @@ class Contact extends Model
 
     protected $guarded = ['id', 'company_id'];
 
-    /**
+   /**
    * Contact Types
    *
    * @var array

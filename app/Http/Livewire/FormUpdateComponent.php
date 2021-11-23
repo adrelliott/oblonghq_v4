@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Filament\Forms;
 use Illuminate\Database\Eloquent\Model;
+use Usernotnull\Toast\Concerns\WireToast;
 
 class FormUpdateComponent extends Component implements Forms\Contracts\HasForms
 {

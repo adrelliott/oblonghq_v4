@@ -31,7 +31,9 @@ module.exports = {
             black: '#000000',
             danger: '#f8b4b4',
             primary: '#5145cd',
-            success: '#0e9f6e',
+            success: {
+                '600': '#0e9f6e',
+            },
             warning: '#d03801',
             gray: {
                 '50': '#f9fafb',

@@ -25,4 +25,6 @@ class TableComponent extends Component implements Tables\Contracts\HasTable
         else
             return $this->model->getQuery();
     }
+
+
 }

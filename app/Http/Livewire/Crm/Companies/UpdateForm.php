@@ -5,7 +5,7 @@ namespace App\Http\Livewire\Crm\Companies;
 use App\Http\Livewire\FormUpdateComponent;
 use Filament\Forms\Components as Filament;
 
-class CreateForm extends FormUpdateComponent
+class UpdateForm extends FormUpdateComponent
 {
     // protected $redirect = '/admin/companies';
 

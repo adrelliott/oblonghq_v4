@@ -2,5 +2,5 @@
 	<x-slot name="header">
 		Your clients
 	</x-slot>
-	<livewire:crm.company.table :model=$company />
+	<livewire:crm.companies.table />
 </x-app-layout>
