@@ -44,8 +44,8 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
     // Admin
     Route::prefix('users')->name('users.')->group(function () {
-        Route::get('/', \App\Http\Livewire\Admin\Users\ListUsers::class)->name('index');
-        Route::get('/{user}', \App\Http\Livewire\Admin\Users\EditUser::class)->name('edit');
+        Route::get('/', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('index');
+        Route::get('/{user}', [\App\Http\Controllers\Admin\UserController::class, 'edit'])->name('edit');
     });
 
     // CRM

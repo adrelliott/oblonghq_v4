@@ -2,13 +2,12 @@
 
 namespace App\Http\Livewire\Crm\Contact;
 
-use App\Http\Livewire\TableComponent;
 use Filament\Tables as Filament;
 
 
 // use Illuminate\Database\Eloquent\Builder;
 
-class Table extends TableComponent
+class Table
 {
 
      protected function getTableColumns(): array
