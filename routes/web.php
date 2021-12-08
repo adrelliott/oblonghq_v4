@@ -1,7 +1,15 @@
 
 <?php
 
+use App\Mail\TestMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+
+
+Route::get('/mail', function() {
+    return Mail::to('al@oblonghq.com')->send(new TestMail);
+});
+
 
 /*
 |--------------------------------------------------------------------------
